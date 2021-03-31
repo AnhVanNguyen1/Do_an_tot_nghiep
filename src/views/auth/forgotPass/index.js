@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   MDBContainer,
   MDBRow,
@@ -9,8 +9,8 @@ import {
   MDBIcon,
   MDBCardBody,
   MDBCard,
-} from "mdbreact";
-import { ROUTES } from "../../../router/routerType";
+} from 'mdbreact';
+import { ROUTES } from '../../../router/routerType';
 
 export default function signIn() {
   return (

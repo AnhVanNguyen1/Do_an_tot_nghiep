@@ -1,293 +1,99 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Logo from '../../../../assets/images/logo/4.png';
+import { ROUTES } from '../../../../router/routerType';
+import { FiSearch, FiUser, FiShoppingBag, FiMenu, FiX } from 'react-icons/fi';
+import './styles.css';
 export default function Header() {
+  const [showSearch, setShowSearch] = useState(false);
+  const [toggleUser, setToggleUser] = useState(false);
+  const [showMenuMobile, setShowMenuMobile] = useState(false);
+  console.log(showMenuMobile);
   return (
-    <header id="htc__header" className="htc__header__area header--one">
-      <div
-        id="sticky-header-with-topbar"
-        className="mainmenu__wrap sticky__header"
-      >
-        <div className="container">
-          <div className="row">
-            <div className="menumenu__container clearfix">
-              <div className="col-lg-2 col-md-2 col-sm-3 col-xs-5">
-                <div className="logo">
-                  <a href="/">
-                    <img src="images/logo/4.png" alt="logo images" />
-                  </a>
-                </div>
-              </div>
-              <div className="col-md-7 col-lg-8 col-sm-5 col-xs-3">
-                <nav className="main__menu__nav hidden-xs hidden-sm">
-                  <ul className="main__menu">
-                    <li className="drop">
-                      <a href="/">Home</a>
-                    </li>
-                    <li className="drop">
-                      <a href="/">women</a>
-                      <ul className="dropdown mega_dropdown">
-                        <li>
-                          <a className="mega__title" href="product-grid.html">
-                            Shop Pages
-                          </a>
-                          <ul className="mega__item">
-                            <li>
-                              <a href="product-grid.html">Product Grid</a>
-                            </li>
-                            <li>
-                              <a href="cart.html">cart</a>
-                            </li>
-                            <li>
-                              <a href="checkout.html">checkout</a>
-                            </li>
-                            <li>
-                              <a href="wishlist.html">wishlist</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a className="mega__title" href="product-grid.html">
-                            Variable Product
-                          </a>
-                          <ul className="mega__item">
-                            <li>
-                              <a href="/">Category</a>
-                            </li>
-                            <li>
-                              <a href="/">My Account</a>
-                            </li>
-                            <li>
-                              <a href="wishlist.html">Wishlist</a>
-                            </li>
-                            <li>
-                              <a href="cart.html">Shopping Cart</a>
-                            </li>
-                            <li>
-                              <a href="checkout.html">Checkout</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a className="mega__title" href="product-grid.html">
-                            Product Types
-                          </a>
-                          <ul className="mega__item">
-                            <li>
-                              <a href="/">Simple Product</a>
-                            </li>
-                            <li>
-                              <a href="/">Variable Product</a>
-                            </li>
-                            <li>
-                              <a href="/">Grouped Product</a>
-                            </li>
-                            <li>
-                              <a href="/">Downloadable Product</a>
-                            </li>
-                            <li>
-                              <a href="/">Simple Product</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="drop">
-                      <a href="/">men</a>
-                      <ul className="dropdown mega_dropdown">
-                        <li>
-                          <a className="mega__title" href="product-grid.html">
-                            Shop Pages
-                          </a>
-                          <ul className="mega__item">
-                            <li>
-                              <a href="product-grid.html">Product Grid</a>
-                            </li>
-                            <li>
-                              <a href="cart.html">cart</a>
-                            </li>
-                            <li>
-                              <a href="checkout.html">checkout</a>
-                            </li>
-                            <li>
-                              <a href="wishlist.html">wishlist</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a className="mega__title" href="product-grid.html">
-                            Variable Product
-                          </a>
-                          <ul className="mega__item">
-                            <li>
-                              <a href="/">Category</a>
-                            </li>
-                            <li>
-                              <a href="/">My Account</a>
-                            </li>
-                            <li>
-                              <a href="wishlist.html">Wishlist</a>
-                            </li>
-                            <li>
-                              <a href="cart.html">Shopping Cart</a>
-                            </li>
-                            <li>
-                              <a href="checkout.html">Checkout</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a className="mega__title" href="product-grid.html">
-                            Product Types
-                          </a>
-                          <ul className="mega__item">
-                            <li>
-                              <a href="/">Simple Product</a>
-                            </li>
-                            <li>
-                              <a href="/">Variable Product</a>
-                            </li>
-                            <li>
-                              <a href="/">Grouped Product</a>
-                            </li>
-                            <li>
-                              <a href="/">Downloadable Product</a>
-                            </li>
-                            <li>
-                              <a href="/">Simple Product</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="drop">
-                      <a href="/">Product</a>
-                      <ul className="dropdown">
-                        <li>
-                          <a href="product-grid.html">Product Grid</a>
-                        </li>
-                        <li>
-                          <a href="product-details.html">Product Details</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="drop">
-                      <a href="blog.html">blog</a>
-                      <ul className="dropdown">
-                        <li>
-                          <a href="blog.html">Blog Grid</a>
-                        </li>
-                        <li>
-                          <a href="blog-details.html">Blog Details</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="drop">
-                      <a href="/">Pages</a>
-                      <ul className="dropdown">
-                        <li>
-                          <a href="blog.html">Blog</a>
-                        </li>
-                        <li>
-                          <a href="blog-details.html">Blog Details</a>
-                        </li>
-                        <li>
-                          <a href="cart.html">Cart page</a>
-                        </li>
-                        <li>
-                          <a href="checkout.html">checkout</a>
-                        </li>
-                        <li>
-                          <a href="contact.html">contact</a>
-                        </li>
-                        <li>
-                          <a href="product-grid.html">product grid</a>
-                        </li>
-                        <li>
-                          <a href="product-details.html">product details</a>
-                        </li>
-                        <li>
-                          <a href="wishlist.html">wishlist</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="contact.html">contact</a>
-                    </li>
-                  </ul>
-                </nav>
+    <div className="header">
+      <div className="header-row">
+        <div className="header-logo">
+          <Link to={ROUTES.HOME}>
+            <img src={Logo} alt="logo" />
+          </Link>
+        </div>
 
-                <div className="mobile-menu clearfix visible-xs visible-sm">
-                  <nav id="mobile_dropdown">
-                    <ul>
-                      <li>
-                        <a href="/">Home</a>
-                      </li>
-                      <li>
-                        <a href="blog.html">blog</a>
-                      </li>
-                      <li>
-                        <a href="/">pages</a>
-                        <ul>
-                          <li>
-                            <a href="blog.html">Blog</a>
-                          </li>
-                          <li>
-                            <a href="blog-details.html">Blog Details</a>
-                          </li>
-                          <li>
-                            <a href="cart.html">Cart page</a>
-                          </li>
-                          <li>
-                            <a href="checkout.html">checkout</a>
-                          </li>
-                          <li>
-                            <a href="contact.html">contact</a>
-                          </li>
-                          <li>
-                            <a href="product-grid.html">product grid</a>
-                          </li>
-                          <li>
-                            <a href="product-details.html">product details</a>
-                          </li>
-                          <li>
-                            <a href="wishlist.html">wishlist</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="contact.html">contact</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
+        <div className="header-center">
+          <ul>
+            <li>
+              <div className="text-nav">Home</div>
+            </li>
+            <li>
+              <div className="text-nav">Feature</div>
+            </li>
+            <li>
+              <div className="text-nav">Blog</div>
+            </li>
+            <li>
+              <div className="text-nav">Contact</div>
+            </li>
+          </ul>
+        </div>
+        <div className="header-nav-mobile">
+          <div>
+            <FiMenu size={30} onClick={() => setShowMenuMobile(true)} />
+          </div>
+        </div>
+        <div className="header-nav-right">
+          <div className="header-nav-icon" onClick={() => setShowSearch(true)}>
+            <FiSearch size={22.5} />
+          </div>
+          <div className="header-nav-icon nav-icon-line">
+            <FiUser size={22.5} onClick={() => setToggleUser(!toggleUser)} />
+            {toggleUser && (
+              <div className="header-box-user">
+                <a href="/" className="box-user-tab">
+                  Profile
+                </a>
+                <a href="/" className="box-user-tab">
+                  Statistical
+                </a>
+                <a href="/" className="box-user-tab">
+                  Logout
+                </a>
               </div>
-              <div className="col-md-3 col-lg-2 col-sm-4 col-xs-4">
-                <div className="header__right">
-                  <div className="header__search search search__open">
-                    <a href="/">
-                      <i className="icon-magnifier icons" />
-                    </a>
-                  </div>
-                  <div className="header__account">
-                    <a href="/">
-                      <i className="icon-user icons" />
-                    </a>
-                  </div>
-                  <div className="htc__shopping__cart">
-                    <a className="cart__menu" href="/">
-                      <i className="icon-handbag icons" />
-                    </a>
-                    <a href="/">
-                      <span className="htc__qua">2</span>
-                    </a>
-                  </div>
-                </div>
+            )}
+          </div>
+          <div className="header-nav-icon">
+            <FiShoppingBag size={22.5} />
+          </div>
+        </div>
+        {showSearch && (
+          <div className="header-search">
+            <div className="header-search-contain">
+              <input
+                placeholder="Searching...."
+                className="header-input-search"
+              />
+              <div className="header-btn-close-search">
+                <FiX size={40} onClick={() => setShowSearch(false)} />
               </div>
             </div>
           </div>
-          <div className="mobile-menu-area" />
-        </div>
+        )}
+        {showMenuMobile && (
+          <div className="header-menu-mobile">
+            <div className="menu-mobile-close">
+              <FiX size={50} onClick={() => setShowMenuMobile(false)} />
+            </div>
+            <div className="view-logo-mobile">
+              <img src={Logo} />
+            </div>
+            <div className="menu-mobile-list-tab">
+              <a className="mobile-tab-item">Home</a>
+              <a className="mobile-tab-item">Feature</a>
+              <a className="mobile-tab-item">Blog</a>
+              <a className="mobile-tab-item">Contact</a>
+              <a className="mobile-tab-item">Logout</a>
+            </div>
+          </div>
+        )}
       </div>
-    </header>
+    </div>
   );
 }

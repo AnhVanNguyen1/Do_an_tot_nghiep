@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   MDBContainer,
   MDBRow,
@@ -8,9 +8,9 @@ import {
   MDBCard,
   MDBCardBody,
   MDBIcon,
-} from "mdbreact";
-import { Link } from "react-router-dom";
-import { ROUTES } from "../../../router/routerType";
+} from 'mdbreact';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../../router/routerType';
 
 const SignUp = () => (
   <div className="layout-center bg">
