@@ -8,7 +8,6 @@ export default function Header() {
   const [showSearch, setShowSearch] = useState(false);
   const [toggleUser, setToggleUser] = useState(false);
   const [showMenuMobile, setShowMenuMobile] = useState(false);
-  console.log(showMenuMobile);
   return (
     <div className="header">
       <div className="header-row">
@@ -21,16 +20,19 @@ export default function Header() {
         <div className="header-center">
           <ul>
             <li>
-              <div className="text-nav">Home</div>
+              <Link to={ROUTES.HOME} className="text-nav">
+                Home
+              </Link>
             </li>
             <li>
-              <div className="text-nav">Feature</div>
+              <Link to={ROUTES.BLOG} className="text-nav">
+                Blog
+              </Link>
             </li>
             <li>
-              <div className="text-nav">Blog</div>
-            </li>
-            <li>
-              <div className="text-nav">Contact</div>
+              <Link to={ROUTES.FEATURES} className="text-nav">
+                Feature
+              </Link>
             </li>
           </ul>
         </div>
@@ -47,15 +49,13 @@ export default function Header() {
             <FiUser size={22.5} onClick={() => setToggleUser(!toggleUser)} />
             {toggleUser && (
               <div className="header-box-user">
-                <a href="/" className="box-user-tab">
+                <Link to={ROUTES.PROFILE} className="box-user-tab">
                   Profile
-                </a>
-                <a href="/" className="box-user-tab">
-                  Statistical
-                </a>
-                <a href="/" className="box-user-tab">
+                </Link>
+
+                <Link to={ROUTES.SIGN_IN} className="box-user-tab">
                   Logout
-                </a>
+                </Link>
               </div>
             )}
           </div>
@@ -82,14 +82,29 @@ export default function Header() {
               <FiX size={50} onClick={() => setShowMenuMobile(false)} />
             </div>
             <div className="view-logo-mobile">
-              <img src={Logo} />
+              <img src={Logo} alt="logo" />
             </div>
             <div className="menu-mobile-list-tab">
-              <a className="mobile-tab-item">Home</a>
-              <a className="mobile-tab-item">Feature</a>
-              <a className="mobile-tab-item">Blog</a>
-              <a className="mobile-tab-item">Contact</a>
-              <a className="mobile-tab-item">Logout</a>
+              <div className="mobile-tab-item">
+                <Link className="text-nav" to={ROUTES.HOME}>
+                  Home
+                </Link>
+              </div>
+              <div className="mobile-tab-item">
+                <Link className="text-nav" to={ROUTES.BLOG}>
+                  Blog
+                </Link>
+              </div>
+              <div className="mobile-tab-item">
+                <Link className="text-nav" to={ROUTES.FEATURES}>
+                  Feature
+                </Link>
+              </div>
+              <div className="mobile-tab-item">
+                <Link className="text-nav" to={ROUTES.SIGN_IN}>
+                  Logout
+                </Link>
+              </div>
             </div>
           </div>
         )}

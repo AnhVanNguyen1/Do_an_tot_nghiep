@@ -8,9 +8,80 @@
 }
 
 .bg {
-  background-image: url("./assets/images/bg/pexels-johannes-plenio-1103970.jpg");
+  background-image: url('./assets/images/bg/pexels-johannes-plenio-1103970.jpg');
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.bg-profile {
+  background-image: url('./assets/images/bg/background.jpg');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.full-width {
+  padding: 0 !important;
+}
+
+.input-price {
+  width: 120px;
+  border-radius: 15px;
+  border-width: 1px;
+  padding: 5px 15px;
+  outline: none;
+  margin: 10px 5px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.outline-input {
+  width: 15px;
+  height: 2px;
+  margin: 0 10px;
+  background-color: black;
+}
+
+@media screen and (max-width: 1400px) {
+  .outline-input {
+    display: none;
+  }
+}
+
+.text-limited {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.icon-edit-bg {
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-profile {
+  z-index: 100;
+}
+
+.wrapper-img-user {
+  position: relative;
 }

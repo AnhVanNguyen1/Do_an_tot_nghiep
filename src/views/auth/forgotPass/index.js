@@ -36,7 +36,7 @@ export default function signIn() {
                       className="text-monospace"
                     />
                   </div>
-                  <div className="d-flex flex-row justify-content-between mt-3 mb-3">
+                  <div className="d-flex flex-row justify-content-between mt-3 mb-3 px-4">
                     <Link
                       to={ROUTES.SIGN_IN}
                       className="text-reset text-monospace"

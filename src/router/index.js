@@ -6,6 +6,9 @@ import SignUp from '../views/auth/form/signup';
 import HomePage from '../views/main/homepage';
 import ForgotPass from '../views/auth/forgotPass';
 import { ROUTES } from './routerType';
+import BlogPage from '../views/main/Blog';
+import FeaturesPage from '../views/main/Features';
+import Profile from '../views/main/Profile';
 
 export default function RootRouter() {
   return (
@@ -16,6 +19,9 @@ export default function RootRouter() {
         <Route path={ROUTES.SIGN_UP} component={SignUp} exact />
         <Route path={ROUTES.FORGOT_PASS} component={ForgotPass} exact />
         <Route path={ROUTES.PAGE_NOT_FOUND} component={NotFoundPage} exact />
+        <Route path={ROUTES.BLOG} component={BlogPage} exact />
+        <Route path={ROUTES.FEATURES} component={FeaturesPage} exact />
+        <Route path={ROUTES.PROFILE} component={Profile} exact />
       </Switch>
     </Router>
   );
