@@ -11,10 +11,13 @@ import {
 import { ROUTES } from '../../../router/routerType';
 import Logo from '../../../assets/images/logo/4.png';
 import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+import { useDispatch } from 'react-redux';
+import { login } from '../../../store/redux/actions';
 // import OverlayLoader from "react-overlay-loading/lib/OverlayLoader";
 
 const SignIn = (props) => {
-  const history = useHistory();
+  const { push } = useHistory();
+  const dispatch = useDispatch();
   const [formValue, setFormValue] = useState({
     email: '',
     password: '',
@@ -26,7 +29,8 @@ const SignIn = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     event.target.className += ' was-validated';
-    history.push(ROUTES.HOME);
+    dispatch(login({ formValue, push }));
+    // history.push(ROUTES.HOME);
   };
 
   return (
