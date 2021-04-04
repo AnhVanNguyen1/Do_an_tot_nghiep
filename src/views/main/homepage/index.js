@@ -5,6 +5,7 @@ import Products from './components/Products';
 import FlashSale from './components/FlashSale';
 import FooterPage from './components/Footer';
 import ContactPage from './components/Contact';
+import ScrollToTop from '../../../utils/scrollToTop';
 export default function HomePage() {
   return (
     <div className="wrapper">
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Products />
       <ContactPage />
       <FooterPage />
+      <ScrollToTop showBellow={500} />
     </div>
   );
 }
