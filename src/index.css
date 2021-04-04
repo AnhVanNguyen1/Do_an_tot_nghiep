@@ -7,3 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
+
+.text-login-black {
+  color: black;
+  margin-right: 10px;
+}

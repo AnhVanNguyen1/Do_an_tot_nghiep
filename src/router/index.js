@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NotFoundPage from '../views/404NotFound';
-import SignIn from '../views/auth/form/signIn';
-import SignUp from '../views/auth/form/signup';
+import SignIn from '../views/auth/form/SignIn';
+import SignUp from '../views/auth/form/Signup';
 import HomePage from '../views/main/homepage';
 import ForgotPass from '../views/auth/forgotPass';
 import { ROUTES } from './routerType';
@@ -22,6 +22,7 @@ export default function RootRouter() {
         <Route path={ROUTES.BLOG} component={BlogPage} exact />
         <Route path={ROUTES.FEATURES} component={FeaturesPage} exact />
         <Route path={ROUTES.PROFILE} component={Profile} exact />
+        <Route path={'*'} component={NotFoundPage} exact />
       </Switch>
     </Router>
   );

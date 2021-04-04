@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MDBContainer,
   MDBRow,
   MDBCol,
   MDBInput,
-  MDBBtn,
-  MDBIcon,
   MDBCardBody,
   MDBCard,
 } from 'mdbreact';
 import { ROUTES } from '../../../router/routerType';
+import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
+import Logo from '../../../assets/images/logo/4.png';
+export default function ForgotPassword() {
+  const [formValue, setFormValue] = useState({
+    email: '',
+  });
 
-export default function signIn() {
+  const onChangeForm = (e) => {
+    setFormValue({ ...setFormValue, [e.target.name]: [e.target.value] });
+  };
+  const submitHandler = (event) => {
+    event.preventDefault();
+    event.target.className += ' was-validated';
+  };
   return (
     <div className="layout-center bg">
       <MDBContainer>
@@ -20,11 +30,14 @@ export default function signIn() {
           <MDBCol md="6">
             <MDBCard>
               <MDBCardBody>
-                <form>
-                  <p className="h4 text-center py-4 text-monospace">
-                    Forgot password
-                  </p>
-                  <div className="grey-text">
+                <form
+                  onSubmit={submitHandler}
+                  className="needs-validation px-5 py-3"
+                >
+                  <div className="text-center mt-3">
+                    <img src={Logo} alt="logo" />
+                  </div>
+                  <div className="blue-text">
                     <MDBInput
                       label="Your email"
                       icon="envelope"
@@ -33,10 +46,14 @@ export default function signIn() {
                       validate
                       error="wrong"
                       success="right"
-                      className="text-monospace"
+                      className="form-control text-monospace"
+                      value={formValue.email}
+                      required
+                      name="email"
+                      onChange={onChangeForm}
                     />
                   </div>
-                  <div className="d-flex flex-row justify-content-between mt-3 mb-3 px-4">
+                  <div className="d-flex flex-row justify-content-between flex-wrap">
                     <Link
                       to={ROUTES.SIGN_IN}
                       className="text-reset text-monospace"
@@ -44,18 +61,18 @@ export default function signIn() {
                       Login now!
                     </Link>
                     <Link
-                      to={ROUTES.FORGOT_PASS}
+                      to={ROUTES.SIGN_UP}
                       className="text-reset text-monospace"
                     >
-                      Forgot password!
+                      Create account now!
                     </Link>
                   </div>
-                  <div className="text-center py-4 mt-3">
-                    <MDBBtn outline color="info">
-                      <Link to={ROUTES.HOME} className="text-monospace">
-                        Register
-                      </Link>
-                      <MDBIcon far icon="paper-plane" className="ml-1" />
+                  <div className="text-center py-3 mt-3">
+                    <MDBBtn rounded outline color="primary" type="submit">
+                      <span className="text-monospace text-login-black">
+                        Forgot password
+                      </span>
+                      <MDBIcon far icon="paper-plane" />
                     </MDBBtn>
                   </div>
                 </form>

@@ -1,18 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import {
   MDBContainer,
   MDBRow,
   MDBCol,
   MDBInput,
-  MDBBtn,
-  MDBIcon,
   MDBCard,
   MDBCardBody,
 } from 'mdbreact';
 import { ROUTES } from '../../../router/routerType';
+import Logo from '../../../assets/images/logo/4.png';
+import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 // import OverlayLoader from "react-overlay-loading/lib/OverlayLoader";
-export default function signIn() {
+
+const SignIn = (props) => {
+  const history = useHistory();
+  const [formValue, setFormValue] = useState({
+    email: '',
+    password: '',
+  });
+
+  const onChangeForm = (e) => {
+    setFormValue({ ...formValue, [e.target.name]: e.target.value });
+  };
+  const submitHandler = (event) => {
+    event.preventDefault();
+    event.target.className += ' was-validated';
+    history.push(ROUTES.HOME);
+  };
+
   return (
     <div className="layout-center bg">
       {/* <OverlayLoader
@@ -28,11 +44,19 @@ export default function signIn() {
         <MDBRow className="d-flex flex-column align-items-center">
           <MDBCol md="6">
             <MDBCard>
-              <MDBCardBody>
-                <form>
-                  <p className="h4 text-center py-4 text-monospace">Sign in</p>
-                  <div className="grey-text">
+              <MDBCardBody className="py-5">
+                <form
+                  className="needs-validation px-5"
+                  onSubmit={submitHandler}
+                >
+                  <div className="text-center mt-3">
+                    <img src={Logo} alt="logo" />
+                  </div>
+                  <div className="blue-text">
                     <MDBInput
+                      value={formValue.email}
+                      onChange={onChangeForm}
+                      name="email"
                       label="Your email"
                       icon="envelope"
                       group
@@ -40,19 +64,23 @@ export default function signIn() {
                       validate
                       error="wrong"
                       success="right"
-                      className="text-monospace"
+                      className="text-monospace form-control"
+                      required
                     />
-
                     <MDBInput
+                      value={formValue.password}
+                      onChange={onChangeForm}
+                      name="password"
                       label="Your password"
                       icon="lock"
                       group
                       type="password"
                       validate
-                      className="text-monospace"
+                      className="form-control text-monospace"
+                      required
                     />
                   </div>
-                  <div className="d-flex flex-row justify-content-between px-4">
+                  <div className="d-flex flex-row justify-content-between flex-wrap">
                     <Link
                       to={ROUTES.SIGN_UP}
                       className="text-reset text-monospace"
@@ -66,12 +94,12 @@ export default function signIn() {
                       Forgot password!
                     </Link>
                   </div>
-                  <div className="text-center py-4 mt-3">
-                    <MDBBtn outline color="info">
-                      <Link to={ROUTES.HOME} className="text-monospace">
+                  <div className="text-center mt-3">
+                    <MDBBtn rounded outline color="primary" type="submit">
+                      <span className="text-monospace text-login-black">
                         Login
-                      </Link>
-                      <MDBIcon far icon="paper-plane" className="ml-1" />
+                      </span>
+                      <MDBIcon far icon="paper-plane" />
                     </MDBBtn>
                   </div>
                 </form>
@@ -82,4 +110,6 @@ export default function signIn() {
       </MDBContainer>
     </div>
   );
-}
+};
+
+export default SignIn;

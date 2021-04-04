@@ -11,7 +11,6 @@ import {
 } from 'mdb-react-ui-kit';
 import Header from '../homepage/components/Header';
 import { MDBEdgeHeader, MDBFreeBird } from 'mdbreact';
-import { AiOutlineEdit } from 'react-icons/ai';
 
 export default function Profile() {
   const [basicActive, setBasicActive] = useState('tab1');
