@@ -1,12 +1,14 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://e9c531476e7a.ngrok.io/',
+  baseURL: 'https://941708df1a1a.ngrok.io/',
   timeout: 20000,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': '**',
+    'Access-Control-Allow-Methods': 'POST, PUT, GET, OPTIONS, DELETE',
+    'Access-Control-Allow-Headers': 'X-Requested-With, X-Auth-Token',
   },
 });
 

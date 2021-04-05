@@ -1,70 +1,122 @@
 import React from 'react';
-import {
-  MDBCarousel,
-  MDBCarouselCaption,
-  MDBCarouselInner,
-  MDBCarouselItem,
-  MDBView,
-  MDBMask,
-  MDBContainer,
-} from 'mdbreact';
-
+import './carousel.scss';
 const CarouselPage = () => {
   return (
-    <MDBContainer fluid className="full-width">
-      <MDBCarousel
-        activeItem={1}
-        length={3}
-        showControls={true}
-        showIndicators={true}
-        className="z-depth-1"
+    <div className="container">
+      <div className="slider">
+        <div className="box1 box">
+          <div className="bg-carousel"></div>
+          <div className="details">
+            <h1>I'm the first Box</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              lacinia dui lectus. Donec scelerisque ipsum diam, ac mattis orci
+              pellentesque eget.
+            </p>
+            <button>Check Now</button>
+          </div>
+
+          <div className="illustration">
+            <div className="inner"></div>
+          </div>
+        </div>
+
+        <div className="box2 box">
+          <div className="bg-carousel"></div>
+          <div className="details">
+            <h1>I'm the second Box</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              lacinia dui lectus. Donec scelerisque ipsum diam, ac mattis orci
+              pellentesque eget.
+            </p>
+            <button>Check Now</button>
+          </div>
+
+          <div className="illustration">
+            <div className="inner"></div>
+          </div>
+        </div>
+
+        <div className="box3 box">
+          <div className="bg-carousel"></div>
+          <div className="details">
+            <h1>I'm the third Box</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              lacinia dui lectus. Donec scelerisque ipsum diam, ac mattis orci
+              pellentesque eget.
+            </p>
+            <button>Check Now</button>
+          </div>
+
+          <div className="illustration">
+            <div className="inner"></div>
+          </div>
+        </div>
+
+        <div className="box4 box">
+          <div className="bg-carousel"></div>
+          <div className="details">
+            <h1>I'm the fourth Box</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              lacinia dui lectus. Donec scelerisque ipsum diam, ac mattis orci
+              pellentesque eget.
+            </p>
+            <button>Check Now</button>
+          </div>
+
+          <div className="illustration">
+            <div className="inner"></div>
+          </div>
+        </div>
+
+        <div className="box5 box">
+          <div className="bg-carousel"></div>
+          <div className="details">
+            <h1>I'm the fifth Box</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              lacinia dui lectus. Donec scelerisque ipsum diam, ac mattis orci
+              pellentesque eget.
+            </p>
+            <button>Check Now</button>
+          </div>
+
+          <div className="illustration">
+            <div className="inner"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="prev"
+        width="56.898"
+        height="91"
+        viewBox="0 0 56.898 91"
       >
-        <MDBCarouselInner>
-          <MDBCarouselItem itemId="1">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-                alt="First slide"
-              />
-              <MDBMask overlay="black-light" />
-            </MDBView>
-            <MDBCarouselCaption>
-              <h3 className="h3-responsive">Light mask</h3>
-              <p>First text</p>
-            </MDBCarouselCaption>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="2">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
-                alt="Second slide"
-              />
-              <MDBMask overlay="black-strong" />
-            </MDBView>
-            <MDBCarouselCaption>
-              <h3 className="h3-responsive">Strong mask</h3>
-              <p>Second text</p>
-            </MDBCarouselCaption>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="3">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
-                alt="Third slide"
-              />
-              <MDBMask overlay="black-slight" />
-            </MDBView>
-            <MDBCarouselCaption>
-              <h3 className="h3-responsive">Slight Mast</h3>
-              <p>Third text</p>
-            </MDBCarouselCaption>
-          </MDBCarouselItem>
-        </MDBCarouselInner>
-      </MDBCarousel>
-    </MDBContainer>
+        <path
+          d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z"
+          transform="translate(0 91) rotate(-90)"
+          fill="#fff"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="next"
+        width="56.898"
+        height="91"
+        viewBox="0 0 56.898 91"
+      >
+        <path
+          d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z"
+          transform="translate(56.898) rotate(90)"
+          fill="#fff"
+        />
+      </svg> */}
+    </div>
   );
 };
 
